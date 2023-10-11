@@ -11,7 +11,7 @@ def ft_tqdm(total):
         space = " " * (line_length - len(bar))
         process_bar = f'|{bar + space}|'
         curr_over_total = f'{i}/{len(total)}'
-        loading_time = f'00:00'
+        elapsed_time = f'{time() - start_time:2.2}'
         it_per_s = f'{(i + 1) / (time() - start_time):.2f}it/s'
-        print(f"\r{percent_str}{process_bar} {curr_over_total} [{loading_time}<{loading_time}, {it_per_s}]", end="")
+        print(f"\r{percent_str}{process_bar} {curr_over_total} [{elapsed_time}<{elapsed_time}, {it_per_s}]", end="")
         yield i
