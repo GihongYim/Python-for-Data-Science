@@ -6,7 +6,7 @@ import pandas as pd
 def load(filename):
     '''open csv dataset'''
     try:
-        data = pd.read_csv(filename)
+        data = pd.read_csv(filename, index_col=["country"])
     except FileNotFoundError:
         print("FileNotFoundError:  No such file or directory: {filename}")
         data = ""
