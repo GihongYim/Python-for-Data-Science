@@ -10,7 +10,7 @@ def ft_load(filename):
 
 
 def main():
-    load_image("landscape.jpg")
+    ft_load("landscape.jpg")
 
 if __name__ == "__main__":
     main()
