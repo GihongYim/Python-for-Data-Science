@@ -9,10 +9,10 @@ def main():
     print(data)
     data = data.set_index('country')
     country_data = data.loc['South Korea']
-    print(country_data)
+    country_data.index = country_data.index.astype(np.int64)
+    print(type(country_data))
     sns.lineplot(data=country_data)
     plt.title('South Korea expectancy Projections')
-    plt.xticks(np.arange(100, 200 ,1))
 
     plt.show()
 
