@@ -1,7 +1,7 @@
-import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 from load_csv import load
+
 
 def change_suffix(x):
     x = x.replace('M', 'e+06')
@@ -10,7 +10,8 @@ def change_suffix(x):
 
 
 def main():
-    income_data = load("income_per_person_gdppercapita_ppp_inflation_adjusted.csv")
+    income_data = \
+        load("income_per_person_gdppercapita_ppp_inflation_adjusted.csv")
     income_data = income_data.set_index('country')
     print(income_data['1900'])
     year_income_data = income_data['1900']
@@ -21,5 +22,7 @@ def main():
     sns.scatterplot(x=year_income_data, y=year_pop_data)
     plt.xscale('log')
     plt.show()
+
+
 if __name__ == "__main__":
     main()

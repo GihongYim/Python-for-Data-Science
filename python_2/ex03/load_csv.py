@@ -3,6 +3,7 @@
 
 import pandas as pd
 
+
 def load(filename):
     '''open csv dataset'''
     try:
