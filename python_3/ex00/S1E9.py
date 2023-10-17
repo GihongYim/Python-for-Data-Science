@@ -1,10 +1,12 @@
 from abc import ABC, abstractmethod
+
+
 class Character(ABC):
     """Your docstring for Class"""
 
     @abstractmethod
     def __init__(self, first_name, is_alive=True):
-        #your code here
+        # your code here
         pass
 
     @abstractmethod
@@ -14,7 +16,7 @@ class Character(ABC):
 
 class Stark(Character):
     """Your docstring for Class"""
-    #your code here
+    # your code here
 
     def __init__(self, first_name, is_alive=True):
         """Your docstring for Constructor"""
@@ -28,6 +30,7 @@ class Stark(Character):
 
 def main():
     pass
+
 
 if __name__ == "__main__":
     main()
