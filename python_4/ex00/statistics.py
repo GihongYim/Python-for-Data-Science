@@ -42,14 +42,15 @@ def quartile(*args: any):
 
 
 def std(*args: any):
-    variance = var(*args)
+    args_mean = sum(args) / len(args)
+    deviation = list(map(lambda x: x - args_mean, args))
+    variance = sum(list(map(lambda x: x ** 2, deviation))) / len(deviation)
     print(f'std: {variance ** (0.5)}')
 
 
 def var(*args: any):
     args_mean = sum(args) / len(args)
     deviation = list(map(lambda x: x - args_mean, args))
-    print(deviation)
     variance = sum(list(map(lambda x: x ** 2, deviation))) / len(deviation)
     print(f'var: {variance}')
 
