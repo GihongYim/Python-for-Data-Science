@@ -4,17 +4,17 @@ from dataclasses import dataclass, field
 
 
 def generate_id() -> str:
-    return "".join(random.choices(string.ascii_lowercase, k = 15))
+    return "".join(random.choices(string.ascii_lowercase, k=15))
 
 
-@dataclass(kw_only=True)
+@dataclass()
 class Student:
     """Representing Student Class"""
     name: str
     surname: str
     active: bool
-    login: str
-    id: str
+    login: str = field(kw_only=True)
+    id: str = field(kw_only=True)
     
     def __init__(self, name: str, surname: str, active: bool = True):
         self.name = name
