@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/ft_add/__init__.py
+src/ft_add/count_in_list.py
+src/ft_add.egg-info/PKG-INFO
+src/ft_add.egg-info/SOURCES.txt
+src/ft_add.egg-info/dependency_links.txt
+src/ft_add.egg-info/top_level.txt
