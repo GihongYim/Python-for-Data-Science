@@ -1,24 +1,30 @@
 import sys
 import string
+
+
 def main():
+    """ main() -> None """
     # your tests and your error handling
     try:
         if len(sys.argv) > 2:
             raise AssertionError("argv is more than expected")
     except AssertionError as e:
         print("AssertiongError: ", e)
-        return 
-    sentence = ""
+        return
     if len(sys.argv) == 1:
-        sentence = input("What is the text to count?\n")
+        try:
+            sentence = input("What is the text to count?\n")
+        except EOFError:
+            print("EOFError: input ended with EOF")
+            return
     else:
         sentence = sys.argv[1]
     count = {
-        "lower_letter" : 0, 
-        "upper_letter" : 0, 
-        "punctuation_mark" : 0,
-        "spaces" : 0,
-        "digits" : 0
+        "lower_letter": 0,
+        "upper_letter": 0,
+        "punctuation_mark": 0,
+        "spaces": 0,
+        "digits": 0
         }
     for char in sentence:
         if char.islower():
@@ -36,6 +42,7 @@ def main():
     print("{} functuation marks".format(count["punctuation_mark"]))
     print("{} spaces".format(count["spaces"]))
     print("{} digits".format(count["digits"]))
+
 
 if __name__ == "__main__":
     main()

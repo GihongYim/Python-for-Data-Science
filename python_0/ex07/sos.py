@@ -3,6 +3,7 @@ import sys
 
 def main():
     # your tests and your error handling
+    """main function for morse """
     NESTED_MORSE = {
         " ": "/ ",
         "A": ".- ",

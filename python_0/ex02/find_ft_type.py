@@ -10,5 +10,5 @@ def all_thing_is_obj(object: any) -> int:
     elif object.__class__.__name__ == "str":
         print("{} is in the kitchen : {} ".format(object, type(object)))
     else:
-        print("Type not found")    
+        print("Type not found")
     return 42

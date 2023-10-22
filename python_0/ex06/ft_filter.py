@@ -11,3 +11,11 @@ is true. If function is None, return the items that are true.
     else:
         result = [x for x in iterable if function(x) is True]
     return result
+
+
+def main():
+    pass
+
+
+if __name__ == "__main__":
+    main()
