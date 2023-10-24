@@ -1,9 +1,25 @@
 def slice_me(family: list, start: int, end: int) -> list:
-    #your code here
+    """_summary_
+        slice family(list) start <= x < end for x in list index
+    Args:
+        family (list): original list
+        start (int): start index for sliced list
+        end (int): end index for sliced list (not included return list)
+
+    Raises:
+        AssertionError: family is not 2-dimensional array
+        IndexError: start list index out of range
+        IndexError: end list index out of range
+
+    Returns:
+        list: family[start, end)
+    """
+
     array = []
     try:
-        if type(family[0]) != list:
-            raise AssertionError("AssertionError: family is not 2-dimensional array")
+        if type(family[0]) is not list:
+            raise AssertionError(
+                "AssertionError: family is not 2-dimensional array")
         if start >= len(family) or -start > len(family):
             raise IndexError("IndexError: start list index out of range")
         if end >= len(family) or -end > len(family):
@@ -19,8 +35,13 @@ def slice_me(family: list, start: int, end: int) -> list:
         print(e)
     return array
 
+
 def main():
+    """
+    main function for slice_my.py test your own code here
+    """
     pass
+
 
 if __name__ == "__main__":
     main()
