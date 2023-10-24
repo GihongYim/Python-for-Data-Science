@@ -8,13 +8,14 @@ def ft_load(filename):
     Args:
         filename (_type_): valid for Image.open() function
     Return:
-        None
+        img: np.array
     """
 
     img = Image.open(filename)
-    x = np.array(img)
-    print(f'The shape of image is: {x.shape}')
-    print(x)
+    array = np.array(img)
+    print(f'The shape of image is: {array.shape}')
+    print(array)
+    return array
 
 
 def main():
@@ -22,7 +23,7 @@ def main():
     _summary_
     test function for ft_load
     """
-    ft_load("landscape.jpeg")
+    ft_load("animal.jpeg")
 
 
 if __name__ == "__main__":

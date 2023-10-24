@@ -12,10 +12,10 @@ def ft_load(filename):
     """
 
     img = Image.open(filename)
-    x = np.array(img)
-    print(f'The shape of image is: {x.shape}')
-    print(x)
-    return img
+    array = np.array(img)
+    print(f'The shape of image is: {array.shape}')
+    print(array)
+    return array
 
 
 def main():
