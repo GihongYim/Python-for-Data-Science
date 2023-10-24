@@ -18,6 +18,10 @@ def ft_load(filename):
 
 
 def main():
+    """
+    _summary_
+    test function for ft_load
+    """
     ft_load("landscape.jpeg")
 
 
