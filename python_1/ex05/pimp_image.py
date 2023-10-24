@@ -2,7 +2,16 @@ from PIL import Image
 
 
 def ft_invert(array):
-    '''Invert the color of the image received.'''
+    """
+    ft_invert(array)
+        change image array inverted color
+
+    Args:
+        array (np.Array): 3D NPArray
+
+    Returns:
+        _type_: _description_
+    """
 
     inverted_array = array.copy()
     inverted_array = 255 - inverted_array
@@ -12,7 +21,16 @@ def ft_invert(array):
 
 
 def ft_red(array):
-    '''Reds the color of the image received.'''
+    """
+    ft_red(array)
+        change image array to show red element
+
+    Args:
+        array (np.Array): 3D NPArray
+
+    Returns:
+        _type_: _description_
+    """
 
     red_array = array.copy()
     red_array[:, :, 1] = 0
@@ -23,7 +41,16 @@ def ft_red(array):
 
 
 def ft_green(array):
-    '''Greens the color of the image received.'''
+    """
+    ft_green(array)
+        change image array to show green element
+
+    Args:
+        array (np.Array): 3D NPArray
+
+    Returns:
+        _type_: _description_
+    """
 
     green_array = array.copy()
     green_array[:, :, 0] = 0
@@ -34,7 +61,16 @@ def ft_green(array):
 
 
 def ft_blue(array):
-    '''Blues the color of the image received.'''
+    """
+    ft_blue(array)
+        change image array to show blue element
+
+    Args:
+        array (np.Array): 3D NPArray
+
+    Returns:
+        _type_: _description_
+    """
 
     blue_array = array.copy()
     blue_array[:, :, 0] = 0
@@ -45,7 +81,16 @@ def ft_blue(array):
 
 
 def ft_grey(array):
-    '''Greys the color of the image received.'''
+    """
+    ft_grey(array)
+        change image array RGB element to greyscale
+
+    Args:
+        array (np.Array): 3D NPArray
+
+    Returns:
+        _type_: _description_
+    """
 
     grey_array = array.copy()
     gray_scale =\

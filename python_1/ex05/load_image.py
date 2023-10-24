@@ -23,7 +23,7 @@ def main():
     _summary_
     test function for ft_load
     """
-    ft_load("animal.jpeg")
+    ft_load("landscape.jpeg")
 
 
 if __name__ == "__main__":
