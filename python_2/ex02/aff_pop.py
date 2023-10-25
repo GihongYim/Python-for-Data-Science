@@ -5,13 +5,27 @@ import numpy as np
 
 
 def change_suffix(x):
+    """_summary_
+        change M, k,... etc to scientific notation e+06, e+03.... etc....
+    Args:
+        x (string): ex) 10M, 100k ....
+
+    Returns:
+        np.int64: 10e+06 ... 100e+03......
+    """
     x = x.replace('M', 'e+06')
     x = x.replace('k', 'e+03')
     return x
 
 
 def main():
-    data = load("population_total.csv")
+    """_summary_
+        display two country life expectance over the year[1800, 2080]
+    """
+    try:
+        data = load("population_total.csv")
+    except FileNotFoundError:
+        return
     data = data.set_index('country')
     country_data = data.loc[['South Korea', 'France']]
     country_data = \
