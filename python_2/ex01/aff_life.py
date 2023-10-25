@@ -5,7 +5,16 @@ import numpy as np
 
 
 def main():
-    data = load("life_expectancy_years.csv")
+    """
+        1) life_expectancy_years.csv file to pd.DataFrame
+        2) display following graph
+            x axis : year [1800, 2080]
+            y axis : life expectancy 
+    """
+    try: 
+        data = load("life_expectancy_years.csv")
+    except FileNotFoundError:
+        return
     print(data)
     data = data.set_index('country')
     country_data = data.loc['South Korea']
