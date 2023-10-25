@@ -11,7 +11,7 @@ def main():
             x axis : year [1800, 2080]
             y axis : life expectancy 
     """
-    try: 
+    try:
         data = load("life_expectancy_years.csv")
     except FileNotFoundError:
         return
