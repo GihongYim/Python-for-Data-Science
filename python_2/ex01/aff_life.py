@@ -9,7 +9,7 @@ def main():
         1) life_expectancy_years.csv file to pd.DataFrame
         2) display following graph
             x axis : year [1800, 2080]
-            y axis : life expectancy 
+            y axis : life expectancy
     """
     try:
         data = load("life_expectancy_years.csv")

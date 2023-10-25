@@ -5,13 +5,30 @@ import pandas as pd
 
 
 def load(filename):
-    '''open csv dataset'''
+    """_summary_
+        load csv file and make pandas DataFrame
+
+    Args:
+        filename (str): .csv file
+
+    Returns:
+        pd.DataFrame: filename.csv ->
+    """
     try:
         data = pd.read_csv(filename)
     except FileNotFoundError:
-        print("FileNotFoundError:  No such file or directory: {filename}")
+        print(f"FileNotFoundError:  No such file or directory: {filename}")
         data = ""
+        raise FileNotFoundError
     return data
+
+
+def main():
+    pass
+
+
+if __name__ == "__main__":
+    main()
 
 
 # Data attribution
