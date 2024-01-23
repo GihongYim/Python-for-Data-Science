@@ -1,43 +1,15 @@
-import math
-
-
 def NULL_not_found(object: any) -> int:
-    # your code here
-    if object.__class__.__name__ == "NoneType":
-        if object is None:
-            print("Nothing = " + str(locals()['object']) +
-                  " " + str(type(object)))
-        else:
-            print("Type not Found")
-            return 1
-    elif object.__class__.__name__ == "float":
-        if math.isnan(object):
-            print("Cheese = " + str(locals()['object']) + " " +
-                  str(type(object)))
-        else:
-            print("Type not Found")
-            return 1
-    elif object.__class__.__name__ == "int":
-        if object == 0:
-            print("Zero = " + str(locals()['object']) + " " +
-                  str(type(object)))
-        else:
-            print("Type not Found")
-            return 1
-    elif object.__class__.__name__ == "str":
-        if object == '':
-            print("Empty = " + str(locals()['object']) + " " +
-                  str(type(object)))
-        else:
-            print("Type not Found")
-            return 1
-    elif object.__class__.__name__ == "bool":
-        if object is False:
-            print("Fake = " + str(locals()['object']) + " " +
-                  str(type(object)))
-        else:
-            print("Type not Found")
-            return 1
-    else:
-        return 1
-    return 0
+    #your code here
+    if isinstance(object, type(None)):
+        print(f"Nothing: {object} {type(None)}")
+    elif isinstance(object, float):
+        print(f"Cheese: {object} {float}")
+    elif isinstance(object, int):
+        print(f"Zero: {object} {int}")
+    elif isinstance(object, str):
+        print(f"Empty: {object} {str}")
+    elif isinstance(object, bool):
+        print(f"Fake: {object} {bool}")
+    else :
+        print("Type not Found")
+    return 1
