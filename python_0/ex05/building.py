@@ -19,6 +19,7 @@ def building(input_string: str):
             spaces += 1
         elif char.isdigit():
             digits += 1
+    print(f"The text contains {len(input_string)} characters:")
     print(f"{upper_letter} upper letters")
     print(f"{lower_letter} lower letters")
     print(f"{punctuation_mark} punctuation marks")
@@ -29,7 +30,9 @@ def building(input_string: str):
 def main():
     try:
         if len(sys.argv) == 1:
-            input_string = input("input your string")
+            # input_string = input("What is the text to count?\n")
+            print("What is the text to count?")
+            input_string = sys.stdin.readline()
         elif len(sys.argv) == 2:
             input_string = sys.argv[1]
         else:
