@@ -1,15 +1,11 @@
-from time import time, strftime
+from time import time, localtime, strftime
 
-print("Seconds since January 1, 1970: ", end="")
-print(f"{time():,}", end="")
-print(" or ", end="")
-print("%.2e" % time(), end="")
-print(" in scientifice notation")
-# todo second line
-print(strftime("%b %d %Y"))
+epoch = localtime(0)
+current_time = time()
+since_epoch = localtime(current_time)
+print(f"Seconds since {strftime('%B %-d %Y', epoch)}: {current_time} or {float(current_time):.2e} in scientific notation")
+print(f"{strftime('%b %-d %-Y', since_epoch) }")
 
-# $>python format_ft_time.py | cat -e
-# Seconds since January 1, 1970: 1,666,355,857.3622 or 1.67e+09 in scientific
-# notation$
+
+# Seconds since January 1, 1970: 1,666,355,857.3622 or 1.67e+09 in scientific notation$
 # Oct 21 2022$
-# $>``
