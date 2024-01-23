@@ -1,47 +1,42 @@
 import sys
-import string
+
+
+def building(input_string: str):
+    upper_letter = 0
+    lower_letter = 0
+    punctuation_mark = 0
+    spaces = 0
+    digits = 0
+
+    for char in input_string:
+        if char.isupper():
+            upper_letter += 1
+        elif char.islower():
+            lower_letter += 1
+        elif char in '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~':
+            punctuation_mark += 1
+        elif char.isspace():
+            spaces += 1
+        elif char.isdigit():
+            digits += 1
+    print(f"{upper_letter} upper letters")
+    print(f"{lower_letter} lower letters")
+    print(f"{punctuation_mark} punctuation marks")
+    print(f"{spaces} spaces")
+    print(f"{digits} digits")
 
 
 def main():
-    """ main() -> None """
-    # your tests and your error handling
     try:
-        if len(sys.argv) > 2:
-            raise AssertionError("argv is more than expected")
-    except AssertionError as e:
-        print("AssertiongError: ", e)
-        return
-    if len(sys.argv) == 1:
-        try:
-            sentence = input("What is the text to count?\n")
-        except EOFError:
-            print("EOFError: input ended with EOF")
-            return
-    else:
-        sentence = sys.argv[1]
-    count = {
-        "lower_letter": 0,
-        "upper_letter": 0,
-        "punctuation_mark": 0,
-        "spaces": 0,
-        "digits": 0
-        }
-    for char in sentence:
-        if char.islower():
-            count["lower_letter"] += 1
-        elif char.isupper():
-            count["upper_letter"] += 1
-        elif char in string.punctuation:
-            count["punctuation_mark"] += 1
-        elif char == " ":
-            count["spaces"] += 1
-        elif char.isdigit():
-            count["digits"] += 1
-    print("{} upper letters".format(count["upper_letter"]))
-    print("{} lower letters".format(count["lower_letter"]))
-    print("{} functuation marks".format(count["punctuation_mark"]))
-    print("{} spaces".format(count["spaces"]))
-    print("{} digits".format(count["digits"]))
+        if len(sys.argv) == 1:
+            input_string = input("input your string")
+        elif len(sys.argv) == 2:
+            input_string = sys.argv[1]
+        else:
+            raise AssertionError("more than onr argument is provided")
+        building(input_string)
+    except Exception as e:
+        print(f"{e.__class__.__name__}: {e}")
 
 
 if __name__ == "__main__":

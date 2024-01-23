@@ -6,7 +6,7 @@ try:
     if len(sys.argv) == 2:
         try:
             num = int(sys.argv[1])
-        except ValueError as e:
+        except ValueError:
             raise AssertionError("argument is not an integer")
         if num % 2 == 0:
             print("I'm Even.")
@@ -14,6 +14,3 @@ try:
             print("I'm Odd")
 except Exception as e:
     print(f"{e.__class__.__name__}: {e}")
-
-    
-    
