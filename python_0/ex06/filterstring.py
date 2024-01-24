@@ -15,8 +15,7 @@ def main():
     except AssertionError as e:
         print(f"{e.__class__.__name__}: {e}")
         return
-        
-        
+
 
 if __name__ == "__main__":
     main()
