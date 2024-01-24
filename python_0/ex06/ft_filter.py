@@ -4,13 +4,13 @@ def ft_filter(function, iterable) -> filter:
 Return an iterator yielding those items of iterable for which function(item)
 is true. If function is None, return the items that are true.
     """
-    if function == None:
+    if function is None:
         result = [item for item in iterable if iterable]
     else:
         result = [item for item in iterable if function(item)]
     return iter(result)
-    
-    
+
+
 def func(x):
     if x == 3:
         return True
@@ -18,7 +18,7 @@ def func(x):
         return False
 
 
-if __name__ == "__main__":
+def main():
     # print(ft_filter.__doc__)
     arr = [1, 2, 3, 4, 5]
     arr2 = ft_filter(func, arr)
@@ -27,3 +27,7 @@ if __name__ == "__main__":
         print(element)
     for element in arr3:
         print(element)
+
+
+if __name__ == "__main__":
+    main()
