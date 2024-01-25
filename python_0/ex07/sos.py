@@ -1,9 +1,15 @@
 import sys
 
 
-def main():
-    # your tests and your error handling
-    """main function for morse """
+def morse_code(line: str) -> list:
+    """_summary_
+
+    Args:
+        line (str): string will be encoded with morse_code
+
+    Returns:
+        list: encoded string list
+    """
     NESTED_MORSE = {
         " ": "/ ",
         "A": ".- ",
@@ -51,18 +57,26 @@ def main():
         ')': '-.--.-'
     }
     char_list = []
-    if len(sys.argv) != 2:
-        raise AssertionError("the arguments are bad")
     for char in sys.argv[1]:
-        if char.upper() not in NESTED_MORSE.keys():
-            raise AssertionError("the arguments are bad")
+        assert char.upper() in NESTED_MORSE.keys(), "the arguments are bad"
         char_list.append(NESTED_MORSE[char.upper()])
     encoded = " ".join(char_list)
-    print(encoded)
+    return encoded
+
+
+def main():
+    # your tests and your error handling
+    """_summary_
+    main_function for testing morse_code function
+    """
+    print(morse_code.__doc__)
+    try:
+        assert len(sys.argv) == 2, "the arguments are bad"
+        encoded = morse_code(sys.argv[1])
+        print(encoded)
+    except Exception as e:
+        print(f"{e.__class__.__name__}: {e}")
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        print("AssertionError: ", e)
+    main()
