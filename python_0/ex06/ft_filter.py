@@ -19,6 +19,8 @@ def func(x):
 
 
 def main():
+    """_summary_
+    """
     # print(ft_filter.__doc__)
     arr = [1, 2, 3, 4, 5]
     arr2 = ft_filter(func, arr)

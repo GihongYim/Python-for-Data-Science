@@ -1,7 +1,19 @@
 import sys
 
 
-def building(input_string: str):
+def building(input_string: str) -> None:
+    """_summary_
+        count string following
+        upper_letter
+        lower_letter
+        punctuation_mark
+        spaces
+        digits
+    Args:
+        input_string (str): input_string for count cases
+    Resurn:
+        None
+    """
     upper_letter = 0
     lower_letter = 0
     punctuation_mark = 0
@@ -28,6 +40,12 @@ def building(input_string: str):
 
 
 def main():
+    """_summary_
+        main function for testing building function
+
+    Raises:
+        AssertionError: sys.argv's length not equal 2
+    """
     try:
         if len(sys.argv) == 1:
             # input_string = input("What is the text to count?\n")

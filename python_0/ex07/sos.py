@@ -6,7 +6,8 @@ def morse_code(line: str) -> list:
 
     Args:
         line (str): string will be encoded with morse_code
-
+    Raise:
+        AssertionError
     Returns:
         list: encoded string list
     """
