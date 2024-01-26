@@ -20,7 +20,7 @@ def give_bmi(height: list[int | float], weight: list[int | float])\
         exit()
 
     bmi_list = [(person_weight / (person_height ** 2))
-                for person_height, person_weight in zip(height, weight)]    
+                for person_height, person_weight in zip(height, weight)]
     return bmi_list
 
 

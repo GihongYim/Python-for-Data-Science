@@ -17,9 +17,8 @@ def slice_me(family: list, start: int, end: int) -> list:
 
     array = []
     try:
-        if type(family[0]) is not list:
-            raise AssertionError(
-                "AssertionError: family is not 2-dimensional array")
+        assert type(family[0]) is list, \
+            "AssertionError: family is not 2-dimensional array"
         if start >= len(family) or -start > len(family):
             raise IndexError("IndexError: start list index out of range")
         if end >= len(family) or -end > len(family):
