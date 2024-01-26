@@ -1,23 +1,32 @@
 def give_bmi(height: list[int | float], weight: list[int | float])\
-        -> list[int | float]:
+      -> list[int | float]:
     """_summary_
-        calculate bmi for each element
 
     Args:
-        height: list[int | float]
-        weight: list[int | float]
+        height (list[int  |  float]): height(m) list
+        weight (list[int  |  float]): weight(kg) list
 
     Returns:
-        list[int | float]: each bmis
+        list[int | float]: return bmi list
     """
-    bmis = [person_weight / (person_height ** 2)
-            for person_height, person_weight in zip(height, weight)]
-    return bmis
+    try:
+        assert len(height) == len(weight), "height, weight size not equal"
+        assert all(isinstance(element, int | float) for element in height), \
+            "height element are not int or str"
+        assert all(isinstance(element, int | float) for element in weight), \
+            "weight element are not int or str"
+    except Exception as e:
+        print(f"{e.__class__.__name__}: {e}")
+        exit()
+
+    bmi_list = [(person_weight / (person_height ** 2))
+                for person_height, person_weight in zip(height, weight)]    
+    return bmi_list
 
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     """_summary_
-        check bmi greater than limit
+
     Args:
         bmi (list[int  |  float]): _description_
         limit (int): _description_
@@ -25,16 +34,18 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     Returns:
         list[bool]: _description_
     """
-    above_limit = [x > limit for x in bmi]
-    return above_limit
+    try:
+        assert all(isinstance(element, int | float) for element in bmi), \
+            "bmi element are not int or str"
+        assert isinstance(limit, int), "limit not int"
+    except Exception as e:
+        print(f"{e.__class__.__name__}: {e}")
+        exit()
+    limit_list = [person_bmi >= limit for person_bmi in bmi]
+    return limit_list
 
 
 def main():
-    """
-    _summary_
-        test function for give_bmi function
-        default pass
-    """
     pass
 
 
