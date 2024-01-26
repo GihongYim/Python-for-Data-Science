@@ -26,13 +26,16 @@ def slice_me(family: list, start: int, end: int) -> list:
             raise IndexError("IndexError: end list index out of range")
         row = len(family)
         column = len(family[0])
+        assert all(column == len(col) for col in family), \
+            "column length are not equal"
         print(f"My shape is : ({row}, {column})")
         array = family[start:end]
         new_row = len(array)
         new_column = len(array[0])
         print(f"My new shape is : ({new_row}, {new_column})")
     except Exception as e:
-        print(e)
+        print(f"{e.__class__.__name__}: {e}")
+        exit()
     return array
 
 
