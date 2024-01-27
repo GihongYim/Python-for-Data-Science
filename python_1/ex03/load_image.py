@@ -10,8 +10,12 @@ def ft_load(filename):
     Return:
         img: np.array
     """
-
-    img = Image.open(filename)
+    
+    try:
+        img = Image.open(filename)
+    except Exception as e:
+        print(f"{e.__class__.__name__}: {e}")
+        exit()
     array = np.array(img)
     print(f'The shape of image is: {array.shape}')
     print(array)
