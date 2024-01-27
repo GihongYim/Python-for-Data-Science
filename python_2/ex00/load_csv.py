@@ -18,7 +18,7 @@ def load(filename):
         data = pd.read_csv(filename)
     except FileNotFoundError:
         print("FileNotFoundError:  No such file or directory: {filename}")
-        data = ""
+        exit()
     return data
 
 
