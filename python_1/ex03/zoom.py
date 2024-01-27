@@ -14,7 +14,7 @@ def zoom(filename: str) -> None:
         print information about it
         diaplay it after zooming
     """
-    array = ft_load("animal.jpeg")
+    array = ft_load(filename)
     r, g, b = array[:, :, 0], array[:, :, 1], array[:, :, 2]
     gray_array = 0.2989 * r + 0.5870 * g + 0.1140 * b
     gray_array = gray_array.astype('uint8')
@@ -26,10 +26,8 @@ def zoom(filename: str) -> None:
     down = up + zoom_size
     zoom_img = gray_img.crop((left, up, right, down))
     zoom_array = np.array(zoom_img)
-    print(f'The shape of image is: {zoom_array.shape}')
-    print(zoom_array)
 
-    print('New shape after slicing: (400, 400, 1) or (400 ,400)')
+    print(f'New shape after slicing: (400, 400, 1) or {zoom_array.shape}')
     print(zoom_array)
     plt.figure()
     plt.imshow(zoom_array, cmap='gray')
