@@ -10,7 +10,7 @@ def ft_load(filename):
     Return:
         img: np.array
     """
-    
+
     try:
         img = Image.open(filename)
     except Exception as e:

@@ -3,8 +3,9 @@ from PIL import Image
 
 def ft_invert(array):
     """
+    
     ft_invert(array)
-        change image array inverted color
+        Inverts the color of the image received
 
     Args:
         array (np.Array): 3D NPArray
