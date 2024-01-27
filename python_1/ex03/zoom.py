@@ -4,13 +4,13 @@ import matplotlib.pyplot as plt
 from PIL import Image
 
 
-def zoom():
+def zoom(filename: str) -> None:
     """
         Args:
-            None
+            filename : str
         Returns:
             None
-        load the image "animal.jpeg"
+        load the image "${filename}.jpeg"
         print information about it
         diaplay it after zooming
     """
@@ -19,14 +19,12 @@ def zoom():
     gray_array = 0.2989 * r + 0.5870 * g + 0.1140 * b
     gray_array = gray_array.astype('uint8')
     gray_img = Image.fromarray(gray_array)
-    w, h = gray_array.shape
     zoom_size = 400
-    zoom_img = gray_img.crop(
-        (w / 2 - zoom_size / 2,
-         h / 2 - zoom_size / 2,
-         w / 2 + zoom_size / 2,
-         h / 2 + zoom_size / 2
-         ))
+    left = 440
+    up = 100
+    right = left + zoom_size
+    down = up + zoom_size
+    zoom_img = gray_img.crop((left, up, right, down))
     zoom_array = np.array(zoom_img)
     print(f'The shape of image is: {zoom_array.shape}')
     print(zoom_array)
@@ -40,7 +38,7 @@ def zoom():
 
 def main():
     """main function"""
-    zoom()
+    zoom("animal.jpeg")
 
 
 if __name__ == '__main__':
