@@ -20,3 +20,11 @@ def ft_load(path: str) -> np.array:
     print(f"The shape of image is: {x.shape}")
     print(x)
     return x
+
+
+def main():
+    pass
+
+
+if __name__ == "__main__":
+    main()
