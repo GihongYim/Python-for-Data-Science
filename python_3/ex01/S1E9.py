@@ -13,11 +13,11 @@ class Character(ABC):
     def __init__(self, first_name, is_alive=True):
         """
             Constructor
-            
             Character(first_name, is_alive=True)
         Args:
             first_name (string): character first name
-            is_alive (bool, optional): set status character alive. Defaults to True.
+            is_alive (bool, optional): set status character alive.\
+                Defaults to True.
         """
         pass
 
@@ -32,7 +32,7 @@ class Character(ABC):
 class Stark(Character):
     """
         Start(Character)
-        
+
         inhereted class from Character (Abstract Class)
     """
 
@@ -41,7 +41,8 @@ class Stark(Character):
             Constructor for Stark Class
         Args:
             first_name (string): set first_name
-            is_alive (bool, optional): set Character live status. Defaults to True.
+            is_alive (bool, optional): set Character live status.\
+                Defaults to True.
         """
         self.first_name = first_name
         self.is_alive = is_alive

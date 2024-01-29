@@ -8,54 +8,67 @@ class Baratheon(Character):
 
     def __init__(self, first_name, is_alive=True):
         """
-        Constructor Baratheon lcass
+        Constructor Baratheon class
 
         Args:
             first_name (string): first_name
-            is_alive (bool, optional): set Character alive status true. Defaults to True.
+            is_alive (bool, optional): set Character alive status true.\
+                Defaults to True.
         """
-        super().__init__(first_name=first_name, is_alive=is_alive)
+        self.firat_name = first_name
+        self.is_alive = is_alive
         self.family_name = 'Baratheon'
         self.eyes = 'brown'
         self.hairs = 'dark'
-    
+
     def die(self):
         """
         Set Character class instance is_alive status False
         """
         self.is_alive = False
         # return not self.is_alive
-    
+
     def __str__(self):
         """
             return string information about Baratheon attribute
-        
+
         Returns:
-            string: "{}, {}, {}".format(self.family_name, self.eyes, self.hairs)
+            string: "{}, {}, {}".format(self.family_name, self.eyes,\
+                self.hairs)
         """
         return "{}, {}, {}".format(self.family_name, self.eyes, self.hairs)
-    
+
     def __repr__(self):
         """
         representation for Baratheon Class instance
         Returns:
-            string: "Vector: ('{}', '{}', '{}')".format(self.family_name, self.eyes, self.hairs)
+            string: "Vector: ('{}', '{}', '{}')".format(self.family_name,\
+                self.eyes, self.hairs)
         """
-        return "Vector: ('{}', '{}', '{}')".format(self.family_name, self.eyes, self.hairs)
+        return "Vector: ('{}', '{}', '{}')".format(self.family_name,
+                                                   self.eyes,
+                                                   self.hairs)
 
 
 class Lannister(Character):
     """
     Lannister class inhereted from Character
     """
-    
+
     def __init__(self, first_name, is_alive=True):
-        # your code here
-        super().__init__(first_name=first_name, is_alive=is_alive)
+        """
+        Constructor of Lannister class
+
+        Args:
+            first_name (_type_): first_name
+            is_alive (bool, optional): is_alive -> default = True
+        """
+        self.first_name = first_name
+        self.is_alive = is_alive
         self.family_name = 'Lannister'
         self.eyes = 'blue'
         self.hairs = 'light'
-    
+
     def die(self):
         """
            Set Character class instance is_alive status False
@@ -65,31 +78,35 @@ class Lannister(Character):
         """
         self.is_alive = False
         # return not self.is_alive
-    
+
     def __str__(self):
         """
             return string information about Lannister attribute
-        
+
         Returns:
-            string: "{}, {}, {}".format(self.family_name, self.eyes, self.hairs)
+            string: "{}, {}, {}".format(self.family_name,\
+                self.eyes, self.hairs)
         """
-        
-        return "{}, {}, {}".format(self.family_name, self.eyes, self.hairs)
-    
+
+        return "{}, {}, {}".format(self.family_name,
+                                   self.eyes,
+                                   self.hairs)
+
     def __repr__(self):
         """
         representation for Lannister Class instance
         Returns:
-            string: "Vector: ('{}', '{}', '{}')".format(self.family_name, self.eyes, self.hairs)
+            string: "Vector: ('{}', '{}', '{}')".format(self.family_name,\
+                self.eyes, self.hairs)
         """
-        
-        return "Vector: ('{}', '{}', '{}')".format(self.family_name, self.eyes, self.hairs)
 
-    # decorator
+        return "Vector: ('{}', '{}', '{}')".format(self.family_name,
+                                                   self.eyes,
+                                                   self.hairs)
+
     @classmethod
     def create_lannister(self, first_name, is_alive):
         """
-        
 
         Args:
             first_name (string): Lannister's first_name
