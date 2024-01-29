@@ -24,7 +24,7 @@ def main():
     """
     try:
         data = load("population_total.csv")
-    except FileNotFoundError:
+    except Exception:
         return
     data = data.set_index('country')
     country_data = data.loc[['South Korea', 'France']]

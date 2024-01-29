@@ -1,26 +1,23 @@
-# This code uses data provided by Gapminder.org.
-# The data is available under the CC-BY license.
-
 import pandas as pd
 
 
-def load(filename):
-    """_summary_
-        load csv file and make pandas DataFrame
+def load(path: str) -> pd.DataFrame:
+    """load csv file
 
     Args:
-        filename (str): .csv file
+        path (str): csv filepath
 
     Returns:
-        pd.DataFrame: filename.csv ->
+        pd.DataFrame:  csv-> pd.DataFrame
     """
+
     try:
-        data = pd.read_csv(filename)
-    except FileNotFoundError:
-        print(f"FileNotFoundError:  No such file or directory: {filename}")
-        data = ""
-        raise FileNotFoundError
-    return data
+        df = pd.read_csv(path)
+    except Exception as e:
+        print(f"{e.__class__.__name__}: {e}")
+        return None
+    print(f"Loading dataset of dimensions {df.shape}")
+    return df
 
 
 def main():
@@ -29,8 +26,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-# Data attribution
-# Source: Gapminder.org (https://www.gapminder.org/)
-# License: CC-BY

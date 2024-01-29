@@ -13,7 +13,7 @@ def main():
     """
     try:
         data = load("life_expectancy_years.csv")
-    except FileNotFoundError:
+    except Exception:
         return
     print(data)
     data = data.set_index('country')
