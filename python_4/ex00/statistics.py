@@ -3,7 +3,6 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
         ft_statistics function args: numbers,\
             kwargs {key:value} key: name value:statistical function
     """
-    # your code here
     functions = {
         "mean": mean,
         "median": median,
@@ -11,14 +10,12 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
         "std": std,
         "var": var
         }
-    if len(args) == 0:
-        print("Error")
-        return None
-    # print(args)
     for function in kwargs.values():
+        if len(args) == 0:
+            print("ERROR")
+            continue
         if function in functions:
             functions[function](*args)
-    
     return None
 
 
