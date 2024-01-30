@@ -16,7 +16,7 @@ class calculator:
         """
         self.object = list(map(lambda x: x + object, self.object))
         print(self.object)
-        return self.object
+        return None
 
     def __mul__(self, object) -> None:
         """_summary_
@@ -26,7 +26,7 @@ class calculator:
         """
         self.object = list(map(lambda x: x * object, self.object))
         print(self.object)
-        return self.object
+        return None
 
     def __sub__(self, object) -> None:
         """_summary_
@@ -36,7 +36,7 @@ class calculator:
         """
         self.object = list(map(lambda x: x - object, self.object))
         print(self.object)
-        return self.object
+        return None
 
     def __truediv__(self, object) -> None:
         """_summary_
@@ -49,4 +49,4 @@ class calculator:
             print(self.object)
         except ZeroDivisionError as e:
             print(f"{e} : not dividev by zero")
-        return self.object
+        return None
