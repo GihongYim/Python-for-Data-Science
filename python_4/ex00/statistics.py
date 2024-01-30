@@ -15,41 +15,79 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
             print("ERROR")
             continue
         if function in functions:
-            functions[function](*args)
+            print(f"{function} : {functions[function](args)}")
     return None
 
 
-def mean(*args: any):
-    args_mean = sum(args) / len(args)
-    print(f'mean: {args_mean}')
+def mean(elements: tuple) -> float:
+    """
+    mean(elements : tuple) -> float
+
+    Args:
+        elements (tuple): tuple of numbers
+
+    Returns:
+        float: mean of elements (tuple)
+    """
+    elements_mean = sum(elements) / len(elements)
+    return elements_mean
 
 
-def median(*args: any):
-    sorted_args = sorted(args)
-    median_value = sorted_args[len(args) // 2]
-    print(f'median: {median_value}')
+def median(elements: tuple) -> any:
+    """median(elements: tuple) -> any
 
+    Args:
+        elements (tuple): _description_
 
-def quartile(*args: any):
-    sorted_args = sorted(args)
+    Returns:
+        any: number : float or int
+    """
+    sorted_elements = sorted(elements)
+    median_value = sorted_elements[len(elements) // 2]
+    return median_value
+
+def quartile(elements: tuple) -> any:
+    """quartile(elements: tuple) -> any
+
+    Args:
+        elements (tuple): tuple of numbers
+
+    Returns:
+        any: quartile of elements
+    """
+    sorted_elements = sorted(elements)
     quartile_values = [
-        sorted_args[len(args) // 4], sorted_args[len(args) * 3 // 4]]
+        sorted_elements[len(elements) // 4], sorted_elements[len(elements) * 3 // 4]]
     quartile_values = list(map(float, quartile_values))
-    print(f'quartile: {quartile_values}')
+    return quartile_values
 
+def std(elements: tuple) -> float:
+    """ std(elements: tuple) -> float
 
-def std(*args: any):
-    args_mean = sum(args) / len(args)
-    deviation = list(map(lambda x: x - args_mean, args))
+    Args:
+        elements (tuple): tuple of numbers
+
+    Returns:
+        float: std of elements
+    """
+    elements_mean = mean(elements)
+    deviation = list(map(lambda x: x - elements_mean, elements))
     variance = sum(list(map(lambda x: x ** 2, deviation))) / len(deviation)
-    print(f'std: {variance ** (0.5)}')
+    return variance ** (0.5)
 
+def var(elements: tuple) -> float:
+    """var(elements: tuple) -> float
 
-def var(*args: any):
-    args_mean = sum(args) / len(args)
-    deviation = list(map(lambda x: x - args_mean, args))
+    Args:
+        elements (tuple): tuple of numbers
+
+    Returns:
+        float: variance of elements
+    """
+    elements_mean = mean(elements)
+    deviation = list(map(lambda x: x - elements_mean, elements))
     variance = sum(list(map(lambda x: x ** 2, deviation))) / len(deviation)
-    print(f'var: {variance}')
+    return variance
 
 
 def main():
