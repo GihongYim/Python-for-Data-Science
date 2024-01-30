@@ -19,7 +19,7 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
     return None
 
 
-def mean(elements: tuple) -> float:
+def mean(elements: tuple) -> float | int:
     """
     mean(elements : tuple) -> float
 
@@ -27,33 +27,33 @@ def mean(elements: tuple) -> float:
         elements (tuple): tuple of numbers
 
     Returns:
-        float: mean of elements (tuple)
+        float | int: mean of elements (tuple)
     """
     elements_mean = sum(elements) / len(elements)
     return elements_mean
 
 
-def median(elements: tuple) -> any:
+def median(elements: tuple) -> float | int:
     """median(elements: tuple) -> any
 
     Args:
         elements (tuple): _description_
 
     Returns:
-        any: number : float or int
+        float | int: median value
     """
     sorted_elements = sorted(elements)
     median_value = sorted_elements[len(elements) // 2]
     return median_value
 
-def quartile(elements: tuple) -> any:
+def quartile(elements: tuple) -> float | int:
     """quartile(elements: tuple) -> any
 
     Args:
         elements (tuple): tuple of numbers
 
     Returns:
-        any: quartile of elements
+        float | int: quartile of elements
     """
     sorted_elements = sorted(elements)
     quartile_values = [
@@ -61,7 +61,7 @@ def quartile(elements: tuple) -> any:
     quartile_values = list(map(float, quartile_values))
     return quartile_values
 
-def std(elements: tuple) -> float:
+def std(elements: tuple) -> float | int:
     """ std(elements: tuple) -> float
 
     Args:
@@ -75,14 +75,14 @@ def std(elements: tuple) -> float:
     variance = sum(list(map(lambda x: x ** 2, deviation))) / len(deviation)
     return variance ** (0.5)
 
-def var(elements: tuple) -> float:
+def var(elements: tuple) -> float | int:
     """var(elements: tuple) -> float
 
     Args:
         elements (tuple): tuple of numbers
 
     Returns:
-        float: variance of elements
+        float | int: variance of elements
     """
     elements_mean = mean(elements)
     deviation = list(map(lambda x: x - elements_mean, elements))
