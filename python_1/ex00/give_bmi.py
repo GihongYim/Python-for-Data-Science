@@ -18,12 +18,16 @@ def give_bmi(height: list[int | float], weight: list[int | float])\
             "height element are not int or float"
         assert all(isinstance(element, int | float) for element in weight), \
             "weight element are not int or float"
+        assert all(element > 0 for element in weight), \
+            "weight shoulbe be positive number"
+        assert all(element > 0 for element in height), \
+            "height shoulbe be positive number"
     except Exception as e:
         print(f"{e.__class__.__name__}: {e}")
         exit()
-
     bmi_list = [(person_weight / (person_height ** 2))
                 for person_height, person_weight in zip(height, weight)]
+
     return bmi_list
 
 
