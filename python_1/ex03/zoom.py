@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 
 
-def zoom(filename: str) -> None:
+def zoom(filename: str, box: tuple) -> None:
     """
         Args:
             filename : str
@@ -19,15 +19,10 @@ def zoom(filename: str) -> None:
     gray_array = 0.2989 * r + 0.5870 * g + 0.1140 * b
     gray_array = gray_array.astype('uint8')
     gray_img = Image.fromarray(gray_array)
-    zoom_size = 400
-    left = 440
-    up = 100
-    right = left + zoom_size
-    down = up + zoom_size
-    zoom_img = gray_img.crop((left, up, right, down))
+    zoom_img = gray_img.crop(box)
     zoom_array = np.array(zoom_img)
 
-    print(f'New shape after slicing: (400, 400, 1) or {zoom_array.shape}')
+    print(f'New shape after slicing: {zoom_array.shape}')
     print(zoom_array)
     plt.figure()
     plt.imshow(zoom_array, cmap='gray')
@@ -36,7 +31,12 @@ def zoom(filename: str) -> None:
 
 def main():
     """main function"""
-    zoom("animal.jpeg")
+    left = 440
+    up = 100
+    zoom_size = 400
+    right = left + zoom_size
+    down = up + zoom_size
+    zoom("animal.jpeg", (left, up, right, down))
 
 
 if __name__ == '__main__':
