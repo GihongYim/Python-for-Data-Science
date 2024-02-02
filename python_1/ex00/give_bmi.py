@@ -35,11 +35,11 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     """_summary_
 
     Args:
-        bmi (list[int  |  float]): _description_
-        limit (int): _description_
+        bmi (list[int  |  float]): bmi list
+        limit (int): limit for bmi
 
     Returns:
-        list[bool]: _description_
+        list[bool]: bmi list which element greater than limit
     """
     try:
         assert all(isinstance(element, int | float) for element in bmi), \

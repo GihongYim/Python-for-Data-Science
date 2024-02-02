@@ -3,7 +3,6 @@ from PIL import Image
 
 def ft_invert(array):
     """
-    
     ft_invert(array)
         Inverts the color of the image received
 
