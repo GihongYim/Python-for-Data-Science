@@ -91,7 +91,11 @@ def ft_grey(array):
     Returns:
         _type_: _description_
     """
-
+    try:
+        assert array.ndim == 3 and array[2] == 3, "image is not RGB image"
+    except Exception as e:
+        print(f"{e.__class__.__name__}: {e}")
+        exit(1)
     grey_array = array.copy()
     gray_scale =\
         0.3 * grey_array[:, :, 0] +\
