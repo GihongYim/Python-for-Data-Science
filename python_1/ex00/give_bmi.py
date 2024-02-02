@@ -11,6 +11,8 @@ def give_bmi(height: list[int | float], weight: list[int | float])\
         list[int | float]: return bmi list
     """
     try:
+        assert isinstance(height, list), "height is not a list"
+        assert isinstance(weight, list), "weight is not a list"
         assert len(height) == len(weight), "height, weight size not equal"
         assert all(isinstance(element, int | float) for element in height), \
             "height element are not int or float"
