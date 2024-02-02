@@ -2,16 +2,13 @@ from PIL import Image
 
 
 def ft_invert(array):
-    """
-    ft_invert(array)
-        Inverts the color of the image received
-
-    Args:
-        array (np.Array): 3D NPArray
-
-    Returns:
-        _type_: _description_
-    """
+    """Inverts the color of the image received."""
+    try:
+        assert array.ndim == 3 and array.shape[2] == 3, \
+            "image is not RGB image"
+    except Exception as e:
+        print(f"{e.__class__.__name__}: {e}")
+        exit(1)
 
     inverted_array = array.copy()
     inverted_array = 255 - inverted_array
@@ -21,16 +18,13 @@ def ft_invert(array):
 
 
 def ft_red(array):
-    """
-    ft_red(array)
-        change image array to show red element
-
-    Args:
-        array (np.Array): 3D NPArray
-
-    Returns:
-        _type_: _description_
-    """
+    """Change the image to red."""
+    try:
+        assert array.ndim == 3 and array.shape[2] == 3, \
+            "image is not RGB image"
+    except Exception as e:
+        print(f"{e.__class__.__name__}: {e}")
+        exit(1)
 
     red_array = array.copy()
     red_array[:, :, 1] = 0
@@ -41,16 +35,13 @@ def ft_red(array):
 
 
 def ft_green(array):
-    """
-    ft_green(array)
-        change image array to show green element
-
-    Args:
-        array (np.Array): 3D NPArray
-
-    Returns:
-        _type_: _description_
-    """
+    """Change the image to green."""
+    try:
+        assert array.ndim == 3 and array.shape[2] == 3, \
+            "image is not RGB image"
+    except Exception as e:
+        print(f"{e.__class__.__name__}: {e}")
+        exit(1)
 
     green_array = array.copy()
     green_array[:, :, 0] = 0
@@ -61,16 +52,13 @@ def ft_green(array):
 
 
 def ft_blue(array):
-    """
-    ft_blue(array)
-        change image array to show blue element
-
-    Args:
-        array (np.Array): 3D NPArray
-
-    Returns:
-        _type_: _description_
-    """
+    """Change the image to blue."""
+    try:
+        assert array.ndim == 3 and array.shape[2] == 3, \
+            "image is not RGB image"
+    except Exception as e:
+        print(f"{e.__class__.__name__}: {e}")
+        exit(1)
 
     blue_array = array.copy()
     blue_array[:, :, 0] = 0
@@ -81,21 +69,14 @@ def ft_blue(array):
 
 
 def ft_grey(array):
-    """
-    ft_grey(array)
-        change image array RGB element to greyscale
-
-    Args:
-        array (np.Array): 3D NPArray
-
-    Returns:
-        _type_: _description_
-    """
+    """Change the image to grey."""
     try:
-        assert array.ndim == 3 and array[2] == 3, "image is not RGB image"
+        assert array.ndim == 3 and array.shape[2] == 3, \
+            "image is not RGB image"
     except Exception as e:
         print(f"{e.__class__.__name__}: {e}")
         exit(1)
+    
     grey_array = array.copy()
     gray_scale =\
         0.3 * grey_array[:, :, 0] +\
