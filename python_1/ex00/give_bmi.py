@@ -1,6 +1,7 @@
 def give_bmi(height: list[int | float], weight: list[int | float])\
       -> list[int | float]:
-    """_summary_
+    """
+    bmi : weight(kg) / (height(m) ^ 2)
 
     Args:
         height (list[int  |  float]): height(m) list
@@ -12,9 +13,9 @@ def give_bmi(height: list[int | float], weight: list[int | float])\
     try:
         assert len(height) == len(weight), "height, weight size not equal"
         assert all(isinstance(element, int | float) for element in height), \
-            "height element are not int or str"
+            "height element are not int or float"
         assert all(isinstance(element, int | float) for element in weight), \
-            "weight element are not int or str"
+            "weight element are not int or float"
     except Exception as e:
         print(f"{e.__class__.__name__}: {e}")
         exit()
