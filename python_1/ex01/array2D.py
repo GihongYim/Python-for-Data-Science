@@ -42,7 +42,9 @@ def main():
     """
     main function for slice_my.py test your own code here
     """
-    pass
+    arr = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5],
+           [6, 6], [7, 7], [8, 8], [9, 9], [10, 10]]
+    print(slice_me(arr, 2, 5))
 
 
 if __name__ == "__main__":
