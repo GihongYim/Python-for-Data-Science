@@ -88,3 +88,7 @@ def ft_grey(array):
     image = Image.fromarray(grey_array)
     image.show()
     return grey_array
+
+
+if __name__ == "__main__":
+    pass
