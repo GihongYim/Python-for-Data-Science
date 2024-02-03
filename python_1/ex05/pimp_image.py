@@ -78,13 +78,9 @@ def ft_grey(array):
         exit(1)
 
     grey_array = array.copy()
-    gray_scale =\
-        0.3 * grey_array[:, :, 0] +\
-        0.59 * grey_array[:, :, 1] +\
-        0.11 * grey_array[:, :, 2]
-    grey_array[:, :, 0] = gray_scale
-    grey_array[:, :, 1] = gray_scale
-    grey_array[:, :, 2] = gray_scale
+    grey_array[:, :, 0] = grey_array[:, :, 0] / 3
+    grey_array[:, :, 1] = grey_array[:, :, 0]
+    grey_array[:, :, 2] = grey_array[:, :, 0]
     image = Image.fromarray(grey_array)
     image.show()
     return grey_array
