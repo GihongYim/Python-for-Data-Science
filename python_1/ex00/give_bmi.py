@@ -53,7 +53,7 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
 
 
 def main():
-    pass
+    print(apply_limit([1, 2, 3, 4, 5, 6, 7], 5))
 
 
 if __name__ == "__main__":
