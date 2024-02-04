@@ -26,13 +26,8 @@ def rotate(filename: str, box: tuple) -> None:
         gray_img = Image.fromarray(gray_array)
         zoom_img = gray_img.crop(box)
         zoom_array = np.array(zoom_img)
-        rows = len(zoom_array)
-        cols = len(zoom_array[0])
-        rotate_array = np.zeros((cols, rows))
-        for row_index in range(rows):
-            for col_index in range(cols):
-                rotate_array[col_index][row_index] = \
-                    zoom_array[row_index][col_index]
+        rotate_array = transpose(zoom_array)
+
     except Exception as e:
         print(f"{e.__class__.__name__}: {e}")
         exit(1)
@@ -42,6 +37,17 @@ def rotate(filename: str, box: tuple) -> None:
     plt.figure()
     plt.imshow(rotate_array, cmap='gray')
     plt.show()
+
+
+def transpose(array: np.array) -> np.array:
+    rows = len(array)
+    cols = len(array[0])
+    rotate_array = np.zeros((cols, rows))
+    for row_index in range(rows):
+        for col_index in range(cols):
+            rotate_array[col_index][row_index] = \
+                array[row_index][col_index]
+    return rotate_array
 
 
 def main():
