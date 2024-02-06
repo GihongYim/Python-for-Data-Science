@@ -17,14 +17,13 @@ def main():
         data = data.set_index('country')
         country_data = data.loc['South Korea']
         country_data.index = country_data.index.astype(np.int64)
+        print(type(country_data))
+        sns.lineplot(data=country_data)
+        plt.title('South Korea expectancy Projections')
+        plt.show()
     except Exception as e:
         print(f"{e.__class__.__name__}: {e}")
         return None
-    print(type(country_data))
-    sns.lineplot(data=country_data)
-    plt.title('South Korea expectancy Projections')
-
-    plt.show()
 
 
 if __name__ == "__main__":
