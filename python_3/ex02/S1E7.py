@@ -110,7 +110,7 @@ class Lannister(Character):
 
         Args:
             first_name (string): Lannister's first_name
-            is_alive (bool): set Lannister 
+            is_alive (bool): set Lannister
 
         Returns:
             Lannister instance: return Lannister instance

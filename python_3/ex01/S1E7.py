@@ -2,18 +2,16 @@ from S1E9 import Character
 
 
 class Baratheon(Character):
-    """
-        Baratheon Class inhereted from Character class
-    """
+    """Baratheon Class inhereted from Character class"""
 
     def __init__(self, first_name, is_alive=True):
         """
-        Constructor Baratheon class
+    Constructor Baratheon class
 
-        Args:
-            first_name (string): first_name
-            is_alive (bool, optional): set Character alive status true.\
-                Defaults to True.
+    Args:
+        first_name (string): first_name
+        is_alive (bool, optional): set Character alive status true.\
+            Defaults to True.
         """
         self.firat_name = first_name
         self.is_alive = is_alive
@@ -23,14 +21,13 @@ class Baratheon(Character):
 
     def die(self):
         """
-        Set Character class instance is_alive status False
+    Set Character class instance is_alive status False
         """
         self.is_alive = False
-        # return not self.is_alive
 
     def __str__(self):
         """
-            return string information about Baratheon attribute
+        return string information about Baratheon attribute
 
         Returns:
             string: "{}, {}, {}".format(self.family_name, self.eyes,\
@@ -77,7 +74,6 @@ class Lannister(Character):
             : _description_
         """
         self.is_alive = False
-        # return not self.is_alive
 
     def __str__(self):
         """
@@ -110,10 +106,10 @@ class Lannister(Character):
 
         Args:
             first_name (string): Lannister's first_name
-            is_alive (bool): set Lannister 
+            is_alive (bool): set Lannister
 
         Returns:
             Lannister instance: return Lannister instance
         """
-        # your code here
+
         return Lannister(first_name, is_alive)

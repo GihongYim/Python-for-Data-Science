@@ -17,9 +17,6 @@ class King(Baratheon, Lannister):
             is_alive (bool, True): set default is_alive. Defaults to True.
         """
         super().__init__(first_name, is_alive)
-        # self.first_name = first_name
-        # self.is_alive = is_alive
-        # self.family_name = "Baratheon"
 
     def set_eyes(self, eyes) -> str:
         """set_eyes
@@ -63,3 +60,11 @@ class King(Baratheon, Lannister):
         return "Vector: ('{}', '{}', '{}')".format(self.family_name,
                                                    self.eyes,
                                                    self.hairs)
+
+
+def main():
+    pass
+
+
+if __name__ == "__main__":
+    main()
