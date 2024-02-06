@@ -19,14 +19,14 @@ class Student:
     name: str
     surname: str
     active: bool
-    login: str = field(kw_only=True)
-    id: str = field(kw_only=True)
+    login: str
+    id: str
     """
     name: str
     surname: str
     active: bool
-    login: str = field(kw_only=True)
-    id: str = field(kw_only=True)
+    login: str
+    id: str
 
     def __init__(self, name: str, surname: str, active: bool = True):
         """__init__
@@ -36,6 +36,7 @@ class Student:
             surname (str): surname of student
             active (bool, optional): student active. Defaults to True.
         """
+
         if name == "":
             print("Error: name is empty string")
             exit()
