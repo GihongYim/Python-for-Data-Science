@@ -30,7 +30,7 @@ def main():
             country_data.map(change_suffix).astype('float64').transpose()
         print(country_data)
         country_data.index = country_data.index.astype(np.int64)
-        sns.lineplot(data=country_data)
+        sns.lineplot(data=country_data, label=['South Korea', 'France'])
         plt.show()
     except Exception as e:
         print(f"{e.__class__.__name__}: {e}")

@@ -26,7 +26,8 @@ def main():
         pop_data = pop_data.set_index('country')
         print(pop_data['1900'])
         year_pop_data = pop_data['1900']
-        sns.scatterplot(x=year_income_data, y=year_pop_data)
+        sns.scatterplot(x=year_income_data, y=year_pop_data, label="person")
+        plt.legend(loc='upper left')
         plt.xscale('log')
         plt.xlabel('Gross domestic product')
         plt.ylabel('Life Expectancy')
