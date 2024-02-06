@@ -13,10 +13,10 @@ def load(path: str) -> pd.DataFrame:
 
     try:
         df = pd.read_csv(path)
+        print(f"Loading dataset of dimensions {df.shape}")
     except Exception as e:
         print(f"{e.__class__.__name__}: {e}")
         return None
-    print(f"Loading dataset of dimensions {df.shape}")
     return df
 
 
