@@ -1,7 +1,7 @@
 class calculator:
     """ calculator class
     """
-    
+
     def __init__(self, object):
         """_summary_
 
@@ -10,7 +10,7 @@ class calculator:
         """
         self.object = object
         pass
-    
+
     def __add__(self, object) -> None:
         """_summary_
         """
