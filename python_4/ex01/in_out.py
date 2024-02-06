@@ -33,7 +33,7 @@ def outer(x: int | float, function) -> object:
         object: function calculate power
     """
     count = None
-    
+
     def inner() -> float:
         """inner() -> float
 
@@ -41,7 +41,7 @@ def outer(x: int | float, function) -> object:
             float: calculate function()
         """
         nonlocal count
-        if count == None:
+        if count is None:
             count = function(x)
         else:
             count = function(count)

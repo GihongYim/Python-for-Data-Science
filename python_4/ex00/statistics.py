@@ -10,12 +10,19 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
         "std": std,
         "var": var
         }
+    try:
+        assert all(isinstance(arg, int | float) for arg in args), \
+            "non-numerical value exist"
+    except Exception as e:
+        print(f"{e.__class__.__name__}: {e}")
+        exit(1)
     for function in kwargs.values():
-        if len(args) == 0:
-            print("ERROR")
-            continue
-        if function in functions:
-            print(f"{function} : {functions[function](args)}")
+        try:
+            assert len(args) > 0, "ERROR"
+            if function in functions:
+                print(f"{function} : {functions[function](args)}")
+        except Exception as e:
+            print(e)
     return None
 
 
@@ -46,6 +53,7 @@ def median(elements: tuple) -> float | int:
     median_value = sorted_elements[len(elements) // 2]
     return median_value
 
+
 def quartile(elements: tuple) -> float | int:
     """quartile(elements: tuple) -> any
 
@@ -57,9 +65,11 @@ def quartile(elements: tuple) -> float | int:
     """
     sorted_elements = sorted(elements)
     quartile_values = [
-        sorted_elements[len(elements) // 4], sorted_elements[len(elements) * 3 // 4]]
+        sorted_elements[len(elements) // 4],
+        sorted_elements[len(elements) * 3 // 4]]
     quartile_values = list(map(float, quartile_values))
     return quartile_values
+
 
 def std(elements: tuple) -> float | int:
     """ std(elements: tuple) -> float
@@ -74,6 +84,7 @@ def std(elements: tuple) -> float | int:
     deviation = list(map(lambda x: x - elements_mean, elements))
     variance = sum(list(map(lambda x: x ** 2, deviation))) / len(deviation)
     return variance ** (0.5)
+
 
 def var(elements: tuple) -> float | int:
     """var(elements: tuple) -> float
