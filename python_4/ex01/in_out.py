@@ -7,6 +7,12 @@ def square(x: int | float) -> int | float:
     Returns:
         int | float: x square 2
     """
+    try:
+        if not isinstance(x, int | float):
+            raise TypeError(f"{x} is not an numerical")
+    except Exception as e:
+        print(f"{e.__class__.__name__}: {e}")
+        exit(1)
     return x ** 2
 
 
@@ -19,6 +25,12 @@ def pow(x: int | float) -> int | float:
     Returns:
         int | float: x power of x
     """
+    try:
+        if not isinstance(x, int | float):
+            raise TypeError(f"{x} is not an numerical")
+    except Exception as e:
+        print(f"{e.__class__.__name__}: {e}")
+        exit(1)
     return x ** x
 
 
@@ -32,7 +44,7 @@ def outer(x: int | float, function) -> object:
     Returns:
         object: function calculate power
     """
-    count = None
+    count = 0
 
     def inner() -> float:
         """inner() -> float
@@ -41,7 +53,7 @@ def outer(x: int | float, function) -> object:
             float: calculate function()
         """
         nonlocal count
-        if count is None:
+        if count == 0:
             count = function(x)
         else:
             count = function(count)
