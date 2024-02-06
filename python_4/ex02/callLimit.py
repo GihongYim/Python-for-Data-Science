@@ -7,7 +7,7 @@ its execution above a limit.
         limit (int): function call limit
 
     Returns:
-        _type_: excute function function limit call,
+        function: excute function function limit call,
         should sub function called number of limit
     """
     count = 0
