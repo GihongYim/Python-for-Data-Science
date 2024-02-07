@@ -36,10 +36,11 @@ def main():
         country_data.index = country_data.index.astype(np.int64)
         country_data = country_data[country_data.index >= 1800]
         country_data = country_data[country_data.index <= 2050]
-        ax = sns.lineplot(data=country_data)
+        ax = sns.lineplot(data=country_data, dashes=False, palette=['b', 'g'])
         plt.xlabel('Year')
         plt.ylabel('Population')
-        plt.yticks(np.arange(20000000, 100000000, 20000000))
+        plt.xticks(np.arange(1800, 2050, 40))
+        plt.yticks(np.arange(20000000, 80000000, 20000000))
         ax.yaxis.set_major_formatter(y_formatter)
         plt.legend(loc='lower right')
         plt.show()
