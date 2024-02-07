@@ -18,6 +18,10 @@ def change_suffix(x):
     return x
 
 
+def y_formatter(x, pos):
+    return str(int(round(x / 1e6, 0))) + "M"
+
+
 def main():
     """_summary_
         display two country life expectance over the year[1800, 2080]
@@ -30,7 +34,13 @@ def main():
             country_data.map(change_suffix).astype('float64').transpose()
         print(country_data)
         country_data.index = country_data.index.astype(np.int64)
-        sns.lineplot(data=country_data)
+        country_data = country_data[country_data.index >= 1800]
+        country_data = country_data[country_data.index <= 2050]
+        ax = sns.lineplot(data=country_data)
+        plt.xlabel('Year')
+        plt.ylabel('Population')
+        plt.yticks(np.arange(20000000, 100000000, 20000000))
+        ax.yaxis.set_major_formatter(y_formatter)
         plt.legend(loc='lower right')
         plt.show()
     except Exception as e:
