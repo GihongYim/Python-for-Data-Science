@@ -17,6 +17,10 @@ def change_suffix(x):
     return x
 
 
+def x_formatter(x, pos):
+    return str(int(round(x / 1e3, 0))) + "k"
+
+
 def main():
     """
     display dotplot
@@ -28,15 +32,18 @@ def main():
         income_data = \
             load("income_per_person_gdppercapita_ppp_inflation_adjusted.csv")
         income_data = income_data.set_index('country')
-        print(income_data['1900'])
-        year_income_data = income_data['1900']
+        year = '1900'
+        print(income_data[year])
+        year_income_data = income_data[year]
         pop_data = load("life_expectancy_years.csv")
         pop_data = pop_data.set_index('country')
-        print(pop_data['1900'])
-        year_pop_data = pop_data['1900']
-        sns.scatterplot(x=year_income_data, y=year_pop_data, label="person")
+        print(pop_data[year])
+        year_pop_data = pop_data[year]
+        ax = sns.scatterplot(x=year_income_data, y=year_pop_data, label="country")
+        plt.title(year)
         plt.legend(loc='upper left')
         plt.xscale('log')
+        ax.xaxis.set_major_formatter(x_formatter)
         plt.xlabel('Gross domestic product')
         plt.ylabel('Life Expectancy')
         plt.show()
