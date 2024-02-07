@@ -13,8 +13,8 @@ def main():
     """
     try:
         data = load("life_expectancy_years.csv")
-        # country = 'South Korea'
-        country = 'France'
+        country = 'South Korea'
+        # country = 'France'
         print(data)
         data = data.set_index('country')
         country_data = data.loc[country]
@@ -23,6 +23,8 @@ def main():
         sns.lineplot(data=country_data)
         plt.title(f'{country} expectancy Projections')
         plt.xlabel('Year')
+        plt.xticks(np.arange(1800, 2100, 40))
+        plt.yticks(np.arange(30, 100, 10))
         plt.ylabel('Life expectancy')
         plt.show()
     except Exception as e:
