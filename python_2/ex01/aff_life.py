@@ -28,4 +28,6 @@ def main():
 
 
 if __name__ == "__main__":
+    """main function for aff_list.py
+    """
     main()

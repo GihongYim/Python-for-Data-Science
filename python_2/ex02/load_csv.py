@@ -21,6 +21,7 @@ def load(path: str) -> pd.DataFrame:
 
 
 def main():
+    """main function for load_csv.py"""
     pass
 
 

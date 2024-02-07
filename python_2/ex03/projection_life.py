@@ -4,6 +4,14 @@ from load_csv import load
 
 
 def change_suffix(x):
+    """_summary_
+        change M, k,... etc to scientific notation e+06, e+03.... etc....
+    Args:
+        x (string): ex) 10M, 100k ....
+
+    Returns:
+        np.int64: 10e+06 ... 100e+03......
+    """
     x = x.replace('M', 'e+06')
     x = x.replace('k', 'e+03')
     return x
@@ -38,4 +46,6 @@ def main():
 
 
 if __name__ == "__main__":
+    """main function for proejction_life.py
+    """
     main()
