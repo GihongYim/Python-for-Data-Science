@@ -39,7 +39,9 @@ def main():
         pop_data = pop_data.set_index('country')
         print(pop_data[year])
         year_pop_data = pop_data[year]
-        ax = sns.scatterplot(x=year_income_data, y=year_pop_data, label="country")
+        ax = sns.scatterplot(x=year_income_data,
+                             y=year_pop_data,
+                             label="country")
         plt.title(year)
         plt.legend(loc='upper left')
         plt.xscale('log')
