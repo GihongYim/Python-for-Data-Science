@@ -21,7 +21,7 @@ class Baratheon(Character):
 
     def die(self):
         """
-    Set Character class instance is_alive status False
+        Set Character class instance is_alive status False
         """
         self.is_alive = False
 

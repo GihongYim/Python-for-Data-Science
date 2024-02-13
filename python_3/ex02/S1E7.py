@@ -81,7 +81,7 @@ class Lannister(Character):
 
     def __str__(self):
         """
-            return string information about Lannister attribute
+        return string information about Lannister attribute
 
         Returns:
             string: "{}, {}, {}".format(self.family_name,\

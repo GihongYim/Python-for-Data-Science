@@ -12,12 +12,12 @@ class Character(ABC):
     @abstractmethod
     def __init__(self, first_name, is_alive=True):
         """
-Constructor
-Character(first_name, is_alive=True)
-    Args:
-        first_name (string): character first name
-        is_alive (bool, optional): set status character alive.\
-        Defaults to True.
+        Constructor
+        Character(first_name, is_alive=True)
+            Args:
+                first_name (string): character first name
+                is_alive (bool, optional): set status character alive.\
+                Defaults to True.
         """
         pass
 
@@ -31,32 +31,32 @@ Character(first_name, is_alive=True)
 
 class Stark(Character):
     """
-Start(Character)
+    Start(Character)
     inhereted class from Character (Abstract Class)
     """
 
     def __init__(self, first_name, is_alive=True):
         """
-Constructor for Stark Class
-Args:
-    first_name (string): set first_name
-    is_alive (bool, optional): set Character live status.\
-Defaults to True.
+        Constructor for Stark Class
+        Args:
+            first_name (string): set first_name
+            is_alive (bool, optional): set Character live status.\
+        Defaults to True.
         """
         self.first_name = first_name
         self.is_alive = is_alive
 
     def die(self):
         """
-Stark method die()
-set is_alive False
+        Stark method die()
+        set is_alive False
         """
         self.is_alive = False
 
 
 def main():
     """
-test function for Stark class
+    test function for Stark class
     """
     pass
 
