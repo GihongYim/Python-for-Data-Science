@@ -15,7 +15,7 @@ class Baratheon(Character):
             is_alive (bool, optional): set Character alive status true.\
                 Defaults to True.
         """
-        self.firat_name = first_name
+        self.first_name = first_name
         self.is_alive = is_alive
         self.family_name = 'Baratheon'
         self.eyes = 'brown'
@@ -26,7 +26,6 @@ class Baratheon(Character):
         Set Character class instance is_alive status False
         """
         self.is_alive = False
-        # return not self.is_alive
 
     def __str__(self):
         """
