@@ -49,17 +49,25 @@ class King(Baratheon, Lannister):
             str: return color of hair
         """
         return self.hairs
+    
+    def __str__(self):
+        """
+        return string information about King attribute
+
+        Returns:
+            string: "{}, {}".format(self.self.first_name,\
+                self.is_alive))
+        """
+
+        return f'{self.first_name}, {self.is_alive}'
 
     def __repr__(self):
         """
         representation for King Class instance
         Returns:
-            string: "Vector: ('{}', '{}', '{}')".format(self.family_name,\
-                self.eyes, self.hairs)
+            string: 'King("{self.first_name}", "{self.is_alive}'
         """
-        return "Vector: ('{}', '{}', '{}')".format(self.family_name,
-                                                   self.eyes,
-                                                   self.hairs)
+        return f'King("{self.first_name}", "{self.is_alive}")'
 
 
 def main():

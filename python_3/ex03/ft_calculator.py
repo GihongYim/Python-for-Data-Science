@@ -54,3 +54,11 @@ class calculator:
         except ZeroDivisionError as e:
             print(f"{e} : not dividev by zero")
         return None
+
+
+def main():
+    pass
+
+
+if __name__ == "__main__":
+    main()

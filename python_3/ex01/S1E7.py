@@ -39,12 +39,11 @@ class Baratheon(Character):
         """
         representation for Baratheon Class instance
         Returns:
-            string: "Vector: ('{}', '{}', '{}')".format(self.family_name,\
+            string: "Baratheon: ('{}', '{}', '{}')".format(self.family_name,\
                 self.eyes, self.hairs)
         """
-        return "Vector: ('{}', '{}', '{}')".format(self.family_name,
-                                                   self.eyes,
-                                                   self.hairs)
+        return "Baratheon('{}', '{}')".format(self.firat_name,
+                                              self.is_alive)
 
 
 class Lannister(Character):
@@ -92,13 +91,12 @@ class Lannister(Character):
         """
         representation for Lannister Class instance
         Returns:
-            string: "Vector: ('{}', '{}', '{}')".format(self.family_name,\
-                self.eyes, self.hairs)
+            string: "Lannister('{}', '{}')".format(self.first_name,
+            self.is_alive)
         """
 
-        return "Vector: ('{}', '{}', '{}')".format(self.family_name,
-                                                   self.eyes,
-                                                   self.hairs)
+        return "Lannister('{}', '{}')".format(self.first_name,
+                                              self.is_alive)
 
     @classmethod
     def create_lannister(self, first_name, is_alive):

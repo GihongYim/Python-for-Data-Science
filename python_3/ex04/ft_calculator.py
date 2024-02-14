@@ -61,3 +61,11 @@ class calculator:
         sous_vec_result = list(map((lambda x, y: x - y), V1, V2))
         print("Sous Vector is :", sous_vec_result)
         return None
+
+
+def main():
+    pass
+
+
+if __name__ == "__main__":
+    main()
