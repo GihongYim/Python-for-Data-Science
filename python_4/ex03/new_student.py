@@ -25,8 +25,8 @@ class Student:
     name: str
     surname: str
     active: bool
-    login: str
-    id: str
+    login: str = field(init=False)
+    id: str = field(init=False, default=generate_id())
 
     def __init__(self, name: str, surname: str, active: bool = True):
         """__init__
@@ -49,7 +49,6 @@ class Student:
         self.surname = surname
         self.active = active
         self.login = name[0] + surname
-        self.id = generate_id()
 
 
 def main():
