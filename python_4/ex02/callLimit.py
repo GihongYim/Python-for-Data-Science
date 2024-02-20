@@ -10,6 +10,13 @@ its execution above a limit.
         function: excute function function limit call,
         should sub function called number of limit
     """
+    try:
+        if not isinstance(limit, int):
+            raise TypeError('limit is not an integer')
+    except Exception as e:
+        print(f"{e.__class__.__name__}: {e}")
+        exit(1)
+
     count = 0
 
     def callLimiter(function):
