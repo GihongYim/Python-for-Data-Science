@@ -7,7 +7,7 @@ print(student)
 
 
 # from new_student import Student
-print('===========================================================')
+# print('===========================================================')
 
-student = Student(name="Edward", surname="agle", id="toto")
-print(student)
+# student = Student(name="Edward", surname="agle", id="toto")
+# print(student)
