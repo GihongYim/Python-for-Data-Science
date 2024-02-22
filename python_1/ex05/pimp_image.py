@@ -26,6 +26,7 @@ def ft_red(array):
         print(f"{e.__class__.__name__}: {e}")
         exit(1)
 
+
     red_array = array.copy()
     red_array[:, :, 1] = 0
     red_array[:, :, 2] = 0
