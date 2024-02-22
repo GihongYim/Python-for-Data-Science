@@ -67,10 +67,31 @@ def quartile(elements: tuple) -> float | int:
     Returns:
         float | int: quartile of elements
     """
+
+    def quantile_q(sorted_elements, q):
+        """quantile when q selected
+
+        Args:
+            sorted_elements (_type_): sorted array(list)
+            q (_type_): quantile (0 - 100)
+        """
+        n = len(sorted_elements)
+        index = (n - 1) * q / 100
+
+        lower_index = int(index)
+        fraction = index - lower_index
+
+        if lower_index >= n - 1:
+            return sorted_elements[n - 1]
+        else:
+            return sorted_elements[lower_index] + fraction \
+                * (sorted_elements[lower_index + 1]
+                   - sorted_elements[lower_index])
     sorted_elements = sorted(elements)
+
     quartile_values = [
-        sorted_elements[len(elements) // 4],
-        sorted_elements[len(elements) * 3 // 4]]
+        quantile_q(sorted_elements, 25),
+        quantile_q(sorted_elements, 75)]
     quartile_values = list(map(float, quartile_values))
     return quartile_values
 
