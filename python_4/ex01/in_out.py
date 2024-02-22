@@ -10,10 +10,11 @@ def square(x: int | float) -> int | float:
     try:
         if not isinstance(x, int | float):
             raise TypeError(f"{x} is not an numerical")
+        result = x ** 2
     except Exception as e:
         print(f"{e.__class__.__name__}: {e}")
         exit(1)
-    return x ** 2
+    return result
 
 
 def pow(x: int | float) -> int | float:
@@ -28,10 +29,11 @@ def pow(x: int | float) -> int | float:
     try:
         if not isinstance(x, int | float):
             raise TypeError(f"{x} is not an numerical")
+        result = x ** x
     except Exception as e:
         print(f"{e.__class__.__name__}: {e}")
         exit(1)
-    return x ** x
+    return result
 
 
 def outer(x: int | float, function) -> object:
