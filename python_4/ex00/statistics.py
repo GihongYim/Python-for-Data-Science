@@ -50,7 +50,11 @@ def median(elements: tuple) -> float | int:
         float | int: median value
     """
     sorted_elements = sorted(elements)
-    median_value = sorted_elements[len(elements) // 2]
+    if len(sorted_elements) % 2 != 0:
+        median_value = sorted_elements[len(elements) // 2]
+    else:
+        median_value = (sorted_elements[len(elements) // 2]
+                        + sorted_elements[len(elements) // 2 - 1]) / 2.0
     return median_value
 
 
