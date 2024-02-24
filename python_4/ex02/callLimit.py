@@ -12,7 +12,7 @@ its execution above a limit.
     """
     try:
         if not isinstance(limit, int):
-            raise TypeError('limit is not an integer')
+            raise TypeError(f'"{limit}" is not an integer')
     except Exception as e:
         print(f"{e.__class__.__name__}: {e}")
         exit(1)
