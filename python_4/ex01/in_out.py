@@ -9,7 +9,7 @@ def square(x: int | float) -> int | float:
     """
     try:
         if not isinstance(x, int | float):
-            raise TypeError(f"{x} is not an numerical")
+            raise TypeError(f"{x} is not a number")
         result = x ** 2
     except Exception as e:
         print(f"{e.__class__.__name__}: {e}")
@@ -28,7 +28,7 @@ def pow(x: int | float) -> int | float:
     """
     try:
         if not isinstance(x, int | float):
-            raise TypeError(f"{x} is not an numerical")
+            raise TypeError(f"{x} is not a number")
         result = x ** x
     except Exception as e:
         print(f"{e.__class__.__name__}: {e}")
